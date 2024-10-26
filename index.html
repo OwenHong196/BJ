@@ -4,9 +4,16 @@
     </head>
     <body>
         <h1>Blackjack</h1>
+        <p id = "name"></p>
         <p id="message-el">Want to play a round?</p>
-        <p>Cards:</p>
-        <p>Sum:</p>
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+        <button id = "start" onclick="startGame()">Start Game</button>
+        <button id = "newC" onclick="newCard()">New Card</button>
+        <p id = "previous">Previous Scores: </p>
+        <p id = "min">Minimum Score: </p>
+        <p id = "max">Maximum Score: </p>
+        <p id = "mean">Mean of Previous Scores: </p>
         <script src="index.js"></script>
     </body>
 </html>
