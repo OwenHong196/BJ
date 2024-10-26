@@ -19,5 +19,8 @@ button {
 }    
 
 #message-el {
-   
+   color: red;
+}
+#name{
+    color:lime;
 }
