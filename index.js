@@ -15,6 +15,17 @@ let cardsEl = document.getElementById("sum-el")
 function getRandomCard(){
     let num = (Math.random() * 13) + 1
     num = Math.floor(num)
+    if (num == 11){
+        cards.push("J")
+    }else if(num == 12){
+        cards.push("Q")
+    }else if(num == 13){
+        cards.push("K")
+    }else if (num == 1){
+        cards.push("A")
+    }else{
+        cards.push(num)
+    }
     if (num > 9){
         num = 10
     }
@@ -27,18 +38,18 @@ function getRandomCard(){
 function newCard(){
     let card= getRandomCard()
     sum += card
-    cards.push(card)
 }
 
 function renderGame(){
     if (!hasBlackjack || isAlive){
-        cardsEl.textContent = ""
+        cardsEl.textContent = "Cards: "
         for (let i = 0; i < cards.length; i++) {
             if (cards.length > i+1){
                 cardsEl.textContent+= cards[i] + ","
             }else{
                 cardsEl.textContent+= cards[i]
             }
+            console.log(cardsEl.textContent)
         }
         if (sum < 21){
             message = "Do you want to draw a new card? 🙂"
@@ -67,7 +78,7 @@ function renderGame(){
             localStorage.setItem("scores",JSON.stringify(scoreList))
         }
         messageEl.textContent = message
-        sumEl.textContent = sum
+        sumEl.textContent = "sum: " + sum
     }
 }
 
